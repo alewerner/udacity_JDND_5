@@ -3,12 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="bc957c66-b662-413f-b1ae-e0cf72fc7f18" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/SareetaApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controllers/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controllers/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SareetaApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="auth-course" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,10 +53,77 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../exemplos_funcionais/P04-eCommerce Application" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager" selected="Spring Boot.SareetaApplication">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CartServiceTest.saveCart">
+    <configuration name="CartControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="auth-course" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.CartControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartControllerTest.addToCart_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="auth-course" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.CartControllerTest" />
+      <option name="METHOD_NAME" value="addToCart_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="auth-course" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.CartServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartServiceTest.saveCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="auth-course" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.CartServiceTest" />
+      <option name="METHOD_NAME" value="saveCart" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SareetaApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="auth-course" />
       <extension name="coverage">
@@ -74,6 +148,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CartServiceTest.saveCart" />
+        <item itemvalue="JUnit.CartServiceTest" />
+        <item itemvalue="JUnit.CartControllerTest" />
+        <item itemvalue="JUnit.CartControllerTest.addToCart_Success" />
         <item itemvalue="JUnit.SareetaApplicationTests" />
       </list>
     </recent_temporary>
@@ -90,7 +168,9 @@
       <updated>1581769715684</updated>
       <workItem from="1581769719453" duration="3014000" />
       <workItem from="1581877099609" duration="9692000" />
-      <workItem from="1581980833166" duration="947000" />
+      <workItem from="1581980833166" duration="3645000" />
+      <workItem from="1582065527331" duration="19000" />
+      <workItem from="1582248453746" duration="4495000" />
     </task>
     <servers />
   </component>
@@ -102,53 +182,72 @@
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
     <state x="1899" y="207" width="524" height="484" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581882621261" />
-    <state x="1974" y="168" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1581893928374">
+    <state x="1974" y="168" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1582251797788">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state x="1974" y="168" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581893928374" />
-    <state x="1949" y="207" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581982051785">
+    <state x="1974" y="168" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582251797788" />
+    <state x="1924" y="205" key="#xdebugger.evaluate" timestamp="1582252671320">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state x="1949" y="207" width="424" height="484" key="FileChooserDialogImpl/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581982051785" />
-    <state width="1554" height="228" key="GridCell.Tab.0.bottom" timestamp="1581897731375">
+    <state x="1924" y="205" key="#xdebugger.evaluate/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582252671320" />
+    <state x="1949" y="207" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582251926319">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.0.bottom/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731375" />
-    <state width="1554" height="228" key="GridCell.Tab.0.center" timestamp="1581897731375">
+    <state x="1949" y="207" width="424" height="484" key="FileChooserDialogImpl/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582251926319" />
+    <state width="1554" height="228" key="GridCell.Tab.0.bottom" timestamp="1582253095431">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.0.center/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731375" />
-    <state width="1554" height="228" key="GridCell.Tab.0.left" timestamp="1581897731375">
+    <state width="1554" height="228" key="GridCell.Tab.0.bottom/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582253095431" />
+    <state width="1554" height="228" key="GridCell.Tab.0.center" timestamp="1582253095431">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.0.left/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731375" />
-    <state width="1554" height="228" key="GridCell.Tab.0.right" timestamp="1581897731375">
+    <state width="1554" height="228" key="GridCell.Tab.0.center/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582253095431" />
+    <state width="1554" height="228" key="GridCell.Tab.0.left" timestamp="1582253095431">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.0.right/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731375" />
-    <state width="1554" height="228" key="GridCell.Tab.1.bottom" timestamp="1581897731376">
+    <state width="1554" height="228" key="GridCell.Tab.0.left/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582253095431" />
+    <state width="1554" height="228" key="GridCell.Tab.0.right" timestamp="1582253095431">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.1.bottom/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731376" />
-    <state width="1554" height="228" key="GridCell.Tab.1.center" timestamp="1581897731376">
+    <state width="1554" height="228" key="GridCell.Tab.0.right/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582253095431" />
+    <state width="1554" height="282" key="GridCell.Tab.1.bottom" timestamp="1582252803016">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.1.center/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731376" />
-    <state width="1554" height="228" key="GridCell.Tab.1.left" timestamp="1581897731376">
+    <state width="1554" height="282" key="GridCell.Tab.1.bottom/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582252803016" />
+    <state width="1554" height="282" key="GridCell.Tab.1.center" timestamp="1582252803016">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.1.left/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731376" />
-    <state width="1554" height="228" key="GridCell.Tab.1.right" timestamp="1581897731376">
+    <state width="1554" height="282" key="GridCell.Tab.1.center/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582252803016" />
+    <state width="1554" height="282" key="GridCell.Tab.1.left" timestamp="1582252803016">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1554" height="228" key="GridCell.Tab.1.right/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581897731376" />
-    <state x="1822" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1581980860994">
+    <state width="1554" height="282" key="GridCell.Tab.1.left/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582252803016" />
+    <state width="1554" height="282" key="GridCell.Tab.1.right" timestamp="1582252803016">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state x="1822" y="276" key="com.intellij.ide.util.TipDialog/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581980860994" />
+    <state width="1554" height="282" key="GridCell.Tab.1.right/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582252803016" />
+    <state x="1822" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1582065541690">
+      <screen x="1366" y="0" width="1600" height="900" />
+    </state>
+    <state x="1822" y="276" key="com.intellij.ide.util.TipDialog/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582065541690" />
+    <state x="1830" y="201" key="run.anything.popup" timestamp="1582253091232">
+      <screen x="1366" y="0" width="1600" height="900" />
+    </state>
+    <state x="1830" y="201" key="run.anything.popup/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1582253091232" />
     <state x="1829" y="192" width="672" height="678" key="search.everywhere.popup" timestamp="1581896239473">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
     <state x="1829" y="192" width="672" height="678" key="search.everywhere.popup/67.159.1299.741/1366.0.1600.900@1366.0.1600.900" timestamp="1581896239473" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/demo/CartControllerTest.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

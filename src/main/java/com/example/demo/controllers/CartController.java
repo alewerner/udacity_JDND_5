@@ -41,7 +41,8 @@ public class CartController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		log.info("Success adding to cart");
-		return ResponseEntity.ok(cartService.saveCart(request));
+		Cart cart = cartService.saveCart(request);
+		return ResponseEntity.ok(cart);
 	}
 	
 	@PostMapping("/removeFromCart")
