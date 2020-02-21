@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc957c66-b662-413f-b1ae-e0cf72fc7f18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/SareetaApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controllers/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controllers/CartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SareetaApplicationTests.class" beforeDir="false" />
-    </list>
+    <list default="true" id="bc957c66-b662-413f-b1ae-e0cf72fc7f18" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +163,7 @@
       <workItem from="1581877099609" duration="9692000" />
       <workItem from="1581980833166" duration="3645000" />
       <workItem from="1582065527331" duration="19000" />
-      <workItem from="1582248453746" duration="4495000" />
+      <workItem from="1582248453746" duration="4753000" />
     </task>
     <servers />
   </component>
