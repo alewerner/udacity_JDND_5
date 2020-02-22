@@ -1,24 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.model.persistence.Cart;
-import com.example.demo.model.persistence.Item;
-import com.example.demo.model.persistence.User;
-import com.example.demo.model.persistence.repositories.CartRepository;
-import com.example.demo.model.requests.ModifyCartRequest;
-import com.example.demo.service.CartService;
-import com.example.demo.service.ItemService;
-import com.example.demo.service.UserService;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-
 //@RunWith(SpringRunner.class)
 public class CartServiceTest {
 
