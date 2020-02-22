@@ -23,54 +23,50 @@ import java.util.Optional;
 @RequestMapping("/api/cart")
 public class CartController {
 
-	private static final Logger log = LoggerFactory.getLogger(CartController.class);
-	
-	@Autowired
-	private CartService cartService;
+    private static final Logger log = LoggerFactory.getLogger(CartController.class);
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private CartService cartService;
 
-	@Autowired
-	private ItemService itemService;
-	
-	@PostMapping("/addToCart")
-	public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
+    @Autowired
+    private UserService userService;
 
-		if (!checkItemAndUser(request.getItemId(), request.getUsername(), request)) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
-		log.info("Success adding to cart");
-		Cart cart = cartService.saveCart(request);
-		return ResponseEntity.ok(cart);
+    @Autowired
+    private ItemService itemService;
+
+    @PostMapping("/addToCart")
+    public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
+
+        if (!checkItemAndUser(request.getItemId(), request.getUsername(), request)) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        log.info("Success adding to cart");
+        Cart cart = cartService.saveCart(request);
+        return ResponseEntity.ok(cart);
+    }
+
+    @PostMapping("/removeFromCart")
+    public ResponseEntity<Cart> removeFromcart(@RequestBody ModifyCartRequest request) {
+
+        if (!checkItemAndUser(request.getItemId(), request.getUsername(), request)) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        log.info("Success removing from cart");
+        return ResponseEntity.ok(cartService.removeFromCart(request));
+    }
+
+    private boolean checkItemAndUser(Long itemId, String userName, ModifyCartRequest request) {
+        User user = userService.findUser(userName);
+
+        if (user == null) {
+            log.error("Error with method. User '{}' not found", request.getUsername());
+            return false;
+        }
+
+        Optional<Item> item = itemService.findItem(itemId);
+        log.error("Error with method. Item not found for id '{}'", request.getItemId());
+
+		return item.isPresent();
 	}
-	
-	@PostMapping("/removeFromCart")
-	public ResponseEntity<Cart> removeFromcart(@RequestBody ModifyCartRequest request) {
 
-		if (!checkItemAndUser(request.getItemId(), request.getUsername(), request)) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
-		log.info("Success removing from cart");
-		return ResponseEntity.ok(cartService.removeFromCart(request));
-	}
-
-	private boolean checkItemAndUser(Long itemId, String userName, ModifyCartRequest request) {
-		User user = userService.findUser(userName);
-
-		if(user == null) {
-			log.error("Error with method. User '{}' not found", request.getUsername());
-			return false;
-		}
-
-		Optional<Item> item = itemService.findItem(itemId);
-		log.error("Error with method. Item not found for id '{}'", request.getItemId());
-
-		if (!item.isPresent()) {
-			return false;
-		}
-
-		return true;
-	}
-		
 }

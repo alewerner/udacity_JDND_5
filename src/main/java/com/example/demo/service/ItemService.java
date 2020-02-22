@@ -15,7 +15,7 @@ public class ItemService {
 
     public Optional<Item> findItem(Long itemId) {
         Optional<Item> item = itemRepository.findById(itemId);
-        if(!item.isPresent()) {
+        if (!item.isPresent()) {
             return null;
         }
 
