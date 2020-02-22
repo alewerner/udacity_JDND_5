@@ -4,6 +4,7 @@ import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.CartRepository;
+import com.example.demo.model.requests.CreateUserRequest;
 import com.example.demo.model.requests.ModifyCartRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,14 @@ public class CartService {
         Cart cart = user.getCart();
         IntStream.range(0, request.getQuantity())
                 .forEach(i -> cart.addItem(item.get()));
+        cartRepository.save(cart);
+
+        return cart;
+    }
+
+    public Cart saveCart(CreateUserRequest createUserRequest) {
+
+        Cart cart = new Cart();
         cartRepository.save(cart);
 
         return cart;

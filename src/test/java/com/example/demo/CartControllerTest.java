@@ -21,24 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-//@RunWith(SpringRunner.class)
-//@DataJpaTest
-//@Transactional
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class CartControllerTest {
 
     private CartController cartController;
-
-    private UserRepository userRepository = mock(UserRepository.class);
-
-    private CartRepository cartRepository = mock(CartRepository.class);
-
-    private ItemRepository itemRepository = mock(ItemRepository.class);
 
     private UserService userService = mock(UserService.class);
 
@@ -109,6 +98,33 @@ public class CartControllerTest {
         when(userService.findUser("test")).thenReturn(null);
 
         final ResponseEntity<Cart> response = cartController.addTocart(request);
+
+        assertNotNull(response);
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    public void removeFromCart_Success() throws Exception {
+        when(userService.findUser("test")).thenReturn(user);
+        when(itemService.findItem(Long.valueOf(1))).thenReturn(optionalItem);
+        when(cartService.removeFromCart(request)).thenReturn(cart);
+
+        final ResponseEntity<Cart> response = cartController.removeFromcart(request);
+
+        assertNotNull(response);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+
+        Cart cartResponse = response.getBody();
+        assertNotNull(cart);
+        assertEquals(Long.valueOf(1), cartResponse.getId());
+        //assertTrue(cartResponse.getItems().isEmpty());
+    }
+
+    @Test
+    public void removeFromCart_Fail() throws Exception {
+        when(userService.findByUsername("test")).thenReturn(null);
+
+        final ResponseEntity<Cart> response = cartController.removeFromcart(request);
 
         assertNotNull(response);
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());

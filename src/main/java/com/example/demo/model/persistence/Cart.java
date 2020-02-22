@@ -1,10 +1,7 @@
 package com.example.demo.model.persistence;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,6 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "cart")
 public class Cart {
@@ -39,6 +37,7 @@ public class Cart {
     private BigDecimal total;
 
     public void addItem(Item item) {
+
         if (items == null) {
             items = new ArrayList<>();
         }
@@ -58,5 +57,13 @@ public class Cart {
             total = new BigDecimal(0);
         }
         total = total.subtract(item.getPrice());
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }

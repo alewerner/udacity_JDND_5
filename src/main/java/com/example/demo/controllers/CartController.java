@@ -40,8 +40,10 @@ public class CartController {
         if (!checkItemAndUser(request.getItemId(), request.getUsername(), request)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        log.info("Success adding to cart");
+
         Cart cart = cartService.saveCart(request);
+
+        log.info("Success adding to cart");
         return ResponseEntity.ok(cart);
     }
 
@@ -56,17 +58,20 @@ public class CartController {
     }
 
     private boolean checkItemAndUser(Long itemId, String userName, ModifyCartRequest request) {
-        User user = userService.findUser(userName);
 
+        User user = userService.findUser(userName);
         if (user == null) {
             log.error("Error with method. User '{}' not found", request.getUsername());
             return false;
         }
 
         Optional<Item> item = itemService.findItem(itemId);
-        log.error("Error with method. Item not found for id '{}'", request.getItemId());
+        if (item == null) {
+            log.error("Error with method. Item not found for id '{}'", request.getItemId());
+            return false;
+        }
 
-		return item.isPresent();
+		return true;
 	}
 
 }

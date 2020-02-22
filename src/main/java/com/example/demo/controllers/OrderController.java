@@ -4,6 +4,7 @@ import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.UserOrder;
 import com.example.demo.model.persistence.repositories.OrderRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
+import com.example.demo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class OrderController {
     private static final Logger log = LoggerFactory.getLogger(CartController.class);
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired
     private OrderRepository orderRepository;
@@ -27,7 +28,7 @@ public class OrderController {
 
     @PostMapping("/submit/{username}")
     public ResponseEntity<UserOrder> submit(@PathVariable String username) {
-        User user = userRepository.findByUsername(username);
+        User user = userService.findByUsername(username);
         log.info("Submitting order for user '{}'", username);
 
         if (user == null) {
@@ -41,7 +42,7 @@ public class OrderController {
 
     @GetMapping("/history/{username}")
     public ResponseEntity<List<UserOrder>> getOrdersForUser(@PathVariable String username) {
-        User user = userRepository.findByUsername(username);
+        User user = userService.findByUsername(username);
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
