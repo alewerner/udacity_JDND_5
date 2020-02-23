@@ -40,6 +40,8 @@ public class CartService {
     public Cart saveCart(CreateUserRequest createUserRequest) {
 
         Cart cart = new Cart();
+        User user = userService.findUser(createUserRequest.getUsername());
+        cart.setUser(user);
         cartRepository.save(cart);
 
         return cart;

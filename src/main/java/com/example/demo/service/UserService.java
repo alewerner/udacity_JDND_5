@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
@@ -24,10 +25,7 @@ public class UserService {
         return user;
     }
 
-    public User createUser(CreateUserRequest createUserRequest) {
-        User user = new User();
-        user.setUsername(createUserRequest.getUsername());
-
+    public User createUser(CreateUserRequest createUserRequest, User user) {
         user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
 
         userRepository.save(user);

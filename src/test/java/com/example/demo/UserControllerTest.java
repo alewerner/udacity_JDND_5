@@ -50,7 +50,7 @@ public class UserControllerTest {
     @Test
     public void createUser_Success() throws Exception {
 
-        when(userService.createUser(userRequest)).thenReturn(user);
+        when(userService.createUser(userRequest, user)).thenReturn(user);
         when(cartService.saveCart(userRequest)).thenReturn(cart);
 
         final ResponseEntity<User> response = userController.createUser(userRequest);

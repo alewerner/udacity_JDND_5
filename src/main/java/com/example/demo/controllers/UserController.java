@@ -47,10 +47,12 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
 
-        User user = userService.createUser(createUserRequest);
+        User user =  new User();
+        user.setUsername(createUserRequest.getUsername());
         Cart cart = cartService.saveCart(createUserRequest);
 
         user.setCart(cart);
+        userService.createUser(createUserRequest, user);
 
         log.info("Success user has been created for user '{}'", createUserRequest.getUsername());
         return ResponseEntity.ok(user);
