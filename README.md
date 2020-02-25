@@ -2,6 +2,27 @@
 
 In this project, you'll have an opportunity to demonstrate the security and DevOps skills that you learned in this lesson by completing an eCommerce application. You'll start with a template for the complete application, and your goal will be to take this template and add proper authentication and authorization controls so users can only access their data, and that data can only be accessed in a secure way. 
 
+## What is available in this Application:
+All the methods are listed on Swagger.
+Swagger UI: http://localhost:8080/swagger-ui.html
+
+## Screenshots
+All the screenshots are located at screenshots folder.
+
+## Features
+* JPA Entities and relationships.
+* Spring Data JPA Repositories.
+* Tests for Controller Layer.
+* JWT Auth.
+* Splunk cover.
+* Jenkins pipeline integration.
+
+## Implementation
+
+### Dependencies
+
+This projects use Java 11, Spring Boot and Maven. The Database runs on memory. 
+
 ## Project Template
 First, you'll want to get set up with the template. The template is written in Java using Spring Boot, Hibernate ORM, and the H2 database. H2 is an in memory database, so if you need to retry something, every application startup is a fresh copy.
 
