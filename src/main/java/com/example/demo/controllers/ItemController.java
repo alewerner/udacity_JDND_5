@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.repositories.ItemRepository;
 import com.example.demo.service.ItemService;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +24,20 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
+    @ApiOperation(value = "Get all items from database")
     @GetMapping
     public ResponseEntity<List<Item>> getItems() {
         return ResponseEntity.ok(itemService.getItems());
     }
 
+    @ApiOperation(value = "Get a especific item for a given ID")
     @GetMapping("/{id}")
     public ResponseEntity<Item> getItemById(@PathVariable Long id) {
         log.info("Success getting item id '{}'", id);
         return ResponseEntity.of(itemService.getItemById(id));
     }
 
+    @ApiOperation(value = "Get a especific item for a given name")
     @GetMapping("/name/{name}")
     public ResponseEntity<List<Item>> getItemsByName(@PathVariable String name) {
         List<Item> items = itemService.getItemsByName(name);

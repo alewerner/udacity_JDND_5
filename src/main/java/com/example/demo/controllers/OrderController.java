@@ -5,6 +5,7 @@ import com.example.demo.model.persistence.UserOrder;
 import com.example.demo.model.persistence.repositories.OrderRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
 
-
+    @ApiOperation(value = "Post a order for a especific username")
     @PostMapping("/submit/{username}")
     public ResponseEntity<UserOrder> submit(@PathVariable String username) {
         User user = userService.findByUsername(username);
@@ -40,6 +41,7 @@ public class OrderController {
         return ResponseEntity.ok(order);
     }
 
+    @ApiOperation(value = "Get all the orders for a especific username")
     @GetMapping("/history/{username}")
     public ResponseEntity<List<UserOrder>> getOrdersForUser(@PathVariable String username) {
         User user = userService.findByUsername(username);

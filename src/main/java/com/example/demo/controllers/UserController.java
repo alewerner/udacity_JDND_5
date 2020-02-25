@@ -7,6 +7,7 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
 import com.example.demo.service.CartService;
 import com.example.demo.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,17 +27,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @ApiOperation(value = "Get a user by his Id")
     @GetMapping("/id/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         return ResponseEntity.of(userService.findById(id));
     }
 
+    @ApiOperation(value = "Get a user by his username")
     @GetMapping("/{username}")
     public ResponseEntity<User> findByUserName(@PathVariable String username) {
         User user = userService.findUser(username);
         return user == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(user);
     }
 
+    @ApiOperation(value = "Creates a user by a given CreateUserRequest")
     @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
         log.info("Creating user '{}'", createUserRequest.getUsername());

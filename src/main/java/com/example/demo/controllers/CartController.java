@@ -7,6 +7,7 @@ import com.example.demo.model.requests.ModifyCartRequest;
 import com.example.demo.service.CartService;
 import com.example.demo.service.ItemService;
 import com.example.demo.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ public class CartController {
     @Autowired
     private ItemService itemService;
 
+    @ApiOperation(value = "Creates a cart from a valid ModifyCartRequest")
     @PostMapping("/addToCart")
     public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
 
@@ -47,6 +49,7 @@ public class CartController {
         return ResponseEntity.ok(cart);
     }
 
+    @ApiOperation(value = "Removes a item from a cart")
     @PostMapping("/removeFromCart")
     public ResponseEntity<Cart> removeFromcart(@RequestBody ModifyCartRequest request) {
 
@@ -57,6 +60,12 @@ public class CartController {
         return ResponseEntity.ok(cartService.removeFromCart(request));
     }
 
+    /**
+     * Checks if the request has User and Item
+     * @param itemId Long
+     * @param userName String
+     * @param request ModifyCartRequest
+     * @return boolean */
     private boolean checkItemAndUser(Long itemId, String userName, ModifyCartRequest request) {
 
         User user = userService.findUser(userName);
